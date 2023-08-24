@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Serie Fibonacci</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Fibonacci</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-input placeholder="Digite un número"  type="number" [(ngModel)]="num"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-button (click)="calcular()">Calcular</ion-button>
+  </ion-item>
+
+  <ion-item >
+    <ion-label>La ubicación en la secuencia de Fibonacci es:</ion-label>
+    <ion-input [value]="location"></ion-input>
+  </ion-item>
+</ion-content>
+
