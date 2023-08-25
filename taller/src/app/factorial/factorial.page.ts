@@ -17,4 +17,22 @@ export class FactorialPage implements OnInit {
   ngOnInit() {
   }
 
+  numero: number = 0; // Inicializamos la propiedad numero con un valor predeterminado
+  factorial: number | null = null; // Usamos el operador de union para permitir valores null
+
+  calcularFactorial(): void {
+    let result = 1;
+    for (let i = 1; i <= this.numero; i++) {
+      result *= i;
+    }
+    this.factorial = result;
+  }
+
 }
+
+
+
+
+
+
+

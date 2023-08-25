@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import{Router,RouterModule} from'@angular/router';
-
-
-
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -14,25 +11,7 @@ import{Router,RouterModule} from'@angular/router';
 export class HomePage {
   constructor(private router: Router) {}
 
-  irFibonacci(): void{
-    this.router.navigateByUrl('fibonacci')
+  irPagina(pagina: string): void {
+    this.router.navigateByUrl(pagina);
   }
-
-  irFactorial(): void{
-    this.router.navigateByUrl('factorial')
-  }
-
-  irPrimos(): void{
-    this.router.navigateByUrl('primos')
-  }
-
-  irPares(): void{
-    this.router.navigateByUrl('par')
-  }
-
-  irUnion(): void{
-    this.router.navigateByUrl('union')
-  }
-
-
 }

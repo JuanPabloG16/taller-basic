@@ -5,26 +5,25 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
-
   <ion-item>
-    <ion-button (click)="irFibonacci()">Fibonacci</ion-button>
+    <ion-button (click)="irPagina('fibonacci')">Fibonacci</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button (click)="irFactorial()">Factorial</ion-button>
+    <ion-button (click)="irPagina('factorial')">Factorial</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button (click)="irPrimos()">Primos</ion-button>
+    <ion-button (click)="irPagina('primos')">Primos</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button (click)="irPares()">Pares o impares</ion-button>
+    <ion-button (click)="irPagina('par')">Pares o impares</ion-button>
   </ion-item>
   <ion-item>
-    <ion-button (click)="irUnion()">union o interseccion</ion-button>
+    <ion-button (click)="irPagina('union')">Unión o intersección</ion-button>
   </ion-item>
+</ion-content>

@@ -10,4 +10,14 @@
       <ion-title size="large">factorial</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-item>
+    <ion-label position="stacked">Ingrese un número:</ion-label>
+    <ion-input [(ngModel)]="numero"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="calcularFactorial()">Calcular Factorial</ion-button>
+  
+  <div *ngIf="factorial !== null">
+    <p>El factorial de {{ numero }} es: {{ factorial }}</p>
+  </div>
 </ion-content>

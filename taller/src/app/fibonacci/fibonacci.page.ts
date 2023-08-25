@@ -11,37 +11,27 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class FibonacciPage implements OnInit {
+  userInput: number = 0;
+  fibonacciSeries: number[] = [];
 
-  num: number = 0;
-  location: number = 0; // Inicialización en la declaración de la clase
-  sequence: number[] = []; // Agrega una nueva propiedad para almacenar la secuencia
-
-  constructor() { 
-    this.location = 0; // Asignación en el constructor
-  }
+  constructor() {}
 
   ngOnInit() {
+    // Código de inicialización (si es necesario) al cargar el componente
   }
 
-  calcular() {
-    let a = 0;
-    let b = 1;
-    let sum = 1;
-    let index = 2;
-    this.sequence = [a, b]; // Inicializa la secuencia con los primeros dos números
-
-    while (sum < this.num) {
-      sum = a + b;
-      a = b;
-      b = sum;
-      index++;
-      this.sequence.push(sum); // Agrega el siguiente número a la secuencia
+  generateFibonacci() {
+    if (this.userInput <= 0) {
+      this.fibonacciSeries = [];
+      return;
     }
-  
-    if (sum === this.num) {
-      this.location = index;
-    } else {
-      this.location = -1; // Si el número no está en la secuencia de Fibonacci
+
+    this.fibonacciSeries = [0, 1];
+    while (this.fibonacciSeries.length < this.userInput) {
+      const nextValue =
+        this.fibonacciSeries[this.fibonacciSeries.length - 1] +
+        this.fibonacciSeries[this.fibonacciSeries.length - 2];
+      this.fibonacciSeries.push(nextValue);
     }
   }
 }
