@@ -1,13 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>union</ion-title>
+    <ion-title>Operaciones de Conjuntos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">union</ion-title>
+      <ion-title size="large">Operaciones de Conjuntos</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-item>
+    <ion-label position="stacked">Conjunto A</ion-label>
+    <ion-input [(ngModel)]="setA" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Conjunto B</ion-label>
+    <ion-input [(ngModel)]="setB" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Operación</ion-label>
+    <ion-select [(ngModel)]="selectedOperation">
+      <ion-select-option value="intersection">Intersección (A∩B)</ion-select-option>
+      <ion-select-option value="union">Unión (A∪B)</ion-select-option>
+      <ion-select-option value="notInB">Elementos en A no en B</ion-select-option>
+      <ion-select-option value="notInA">Elementos en B no en A</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="performOperation()">Calcular</ion-button>
+
+  <ion-item-divider></ion-item-divider>
+
+  <ion-item>
+    <ion-label>Resultado</ion-label>
+    <ion-text>{{ result }}</ion-text>
+  </ion-item>
+
+  <ion-button expand="full" (click)="goToHomePage()">Volver a la página principal</ion-button>
 </ion-content>

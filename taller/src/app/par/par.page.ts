@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-par',
   templateUrl: './par.page.html',
@@ -13,7 +14,7 @@ export class ParPage implements OnInit {
   userNumber: number = 0;
   selectedOption: 'pares' | 'impares' = 'pares';
   resultArray: number[] = [];
-  constructor() {}
+  constructor(private router: Router) {}
   ngOnInit() {}
   calculate() {
     this.resultArray = [];
@@ -22,4 +23,9 @@ export class ParPage implements OnInit {
       this.resultArray.push(i);
     }
   }
+  goToHomePage() {
+    // Navegar de regreso a la página principal
+    this.router.navigate(['home']); 
+  }
+
 }

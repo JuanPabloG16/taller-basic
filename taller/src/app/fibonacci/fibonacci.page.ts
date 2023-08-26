@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fibonacci',
@@ -14,7 +15,7 @@ export class FibonacciPage implements OnInit {
   userInput: number = 0;
   fibonacciSeries: number[] = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
     // Código de inicialización (si es necesario) al cargar el componente
@@ -33,5 +34,9 @@ export class FibonacciPage implements OnInit {
         this.fibonacciSeries[this.fibonacciSeries.length - 2];
       this.fibonacciSeries.push(nextValue);
     }
+  }
+  goToHomePage() {
+    // Navegar de regreso a la página principal
+    this.router.navigate(['home']); 
   }
 }
