@@ -15,7 +15,7 @@ export class UnionPage implements OnInit {
 
   setA = '';
   setB = '';
-  selectedOperation = 'intersection';
+  selectedOperation = '';
   result = '';
 
   ngOnInit() {
@@ -24,7 +24,8 @@ export class UnionPage implements OnInit {
   constructor(private router: Router) {}
 
   performOperation() {
-    const arrayA = this.setA.split(',').map(item => item.trim());
+    const arrayA = this.setA.split(',').map(item => item.trim());//utilizando el método split(','), que separa los elementos por comas. Luego, map(item => item.trim())
+                                                                 //se utiliza para eliminar los espacios en blanco alrededor de cada elemento.
     const arrayB = this.setB.split(',').map(item => item.trim());
 
     switch (this.selectedOperation) {
@@ -32,7 +33,7 @@ export class UnionPage implements OnInit {
         this.result = arrayA.filter(item => arrayB.includes(item)).join(', ');
         break;
       case 'union':
-        this.result = Array.from(new Set([...arrayA, ...arrayB])).join(', ');
+       this.result = Array.from(new Set([...arrayA, ...arrayB])).join(', ');// se utiliza la sintaxis de propagación (...) para combinar los elementos de ambos arrays en un único array,
         break;
       case 'notInB':
         this.result = arrayA.filter(item => !arrayB.includes(item)).join(', ');

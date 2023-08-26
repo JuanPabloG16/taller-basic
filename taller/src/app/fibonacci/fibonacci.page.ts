@@ -18,7 +18,7 @@ export class FibonacciPage implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-    // Código de inicialización (si es necesario) al cargar el componente
+   
   }
 
   generateFibonacci() {
@@ -26,7 +26,7 @@ export class FibonacciPage implements OnInit {
       this.fibonacciSeries = [];
       return;
     }
-
+//[0.1.3]
     this.fibonacciSeries = [0, 1];
     while (this.fibonacciSeries.length < this.userInput) {
       const nextValue =

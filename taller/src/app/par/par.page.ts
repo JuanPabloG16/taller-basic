@@ -18,7 +18,7 @@ export class ParPage implements OnInit {
   ngOnInit() {}
   calculate() {
     this.resultArray = [];
-    const start = this.selectedOption === 'pares' ? 2 : 1; 
+    const start = this.selectedOption === 'pares' ? 2 : 1; //condición ? valorSiVerdadero : valorSiFalso;
     for (let i = start; i <= this.userNumber; i += 2) {
       this.resultArray.push(i);
     }

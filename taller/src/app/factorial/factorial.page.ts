@@ -14,10 +14,8 @@ import { Router } from '@angular/router';
 export class FactorialPage implements OnInit {
 
   constructor(private router: Router) {}
-
   ngOnInit() {
   }
-
   numero: number = 0; // Inicializamos la propiedad numero con un valor predeterminado
   factorial: number | null = null; // Usamos el operador de union para permitir valores null
 
@@ -25,6 +23,8 @@ export class FactorialPage implements OnInit {
     let result = 1;
     for (let i = 1; i <= this.numero; i++) {
       result *= i;
+          /* En la primera iteración, result *= 1 (1 * 1) asigna 1 a result.
+En la segunda iteración, result *= 2 (1 * 2) asigna 2 a result.*/
     }
     this.factorial = result;
   }
